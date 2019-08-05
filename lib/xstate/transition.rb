@@ -38,8 +38,7 @@ module XState
 
       def resolve!
         @node = @src_node.find_node(@key) or raise "Could not resolve target node #{@key} from #{@src_node.key}"
-        while @node.is_a?(XState::CompoundStateNode)
-          binding.pry if @node.initial.nil?
+        while @node.is_a?(CompoundStateNode)
           @node = @node.initial
         end
       end

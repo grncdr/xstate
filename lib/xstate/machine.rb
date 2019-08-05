@@ -29,7 +29,6 @@ module XState
       next_nodes = []
       active_nodes.zip(transitions) do |node, transition|
         if transition
-          binding.pry if transition.node.nil?
           next_nodes << transition.node
           actions.concat(transition.actions)
         else

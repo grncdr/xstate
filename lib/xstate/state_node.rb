@@ -2,7 +2,6 @@ module XState
   class StateNode
     def self.new(params, parent = nil, key = nil)
       type = params[:type] || (params[:states] ? 'compound' : params[:on].nil? || params[:on].empty? ? 'final' : 'atomic')
-      binding.pry if type == 'compound' && key == 'expected'
       klass = [AtomicStateNode, FinalStateNode, CompoundStateNode, ParallelStateNode, HistoryStateNode].find { |k| k.name[8 .. -10].downcase == type }
       raise "Unknown state node type: #{type.inspect}" if klass.nil?
       node = klass.allocate
