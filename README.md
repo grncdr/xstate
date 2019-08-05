@@ -36,6 +36,51 @@ toggle_service.send_event('TOGGLE') #=> 'active'
 toggle_service.send_event('TOGGLE') #=> 'inactive'
 ```
 
+## Why?
+
+I find statecharts to be an elegant tool for modelling complicated application
+behaviour, and XState in particular a very nice implementation. Among other
+things, the [interactive visualizer](https://xstate.js.org/viz) is extremely
+useful when discussing "what should happen?" with a team.
+
+As such, the overall goal for this repo is to have compatibility with XState
+such that a machine definition can be created in the visualizer and copy-pasted
+into a Ruby file with no changes.
+
+### Plan
+
+The following features are implemented:
+
+- [x] Machines
+- [x] States
+- [x] State Nodes
+- [x] Events
+- [x] Transitions
+- [x] Hierarchical State Nodes
+- [x] Parallel State Nodes
+- [x] Final States
+
+The following features are partly implemented/untested:
+
+- [ ] Context
+- [ ] Guards
+- [ ] History
+- [ ] Actions
+- [ ] Identifying State Nodes
+
+These features might be implemented, but I don't know yet if they have enough
+value for Ruby applications to build them into the library:
+
+- [ ] Action creators
+  - [ ] Send action
+  - [ ] Raise action
+  - [ ] Log action
+- [ ] Activities
+- [ ] Services
+- [ ] Actors
+- [ ] Delayed Events and Transitions
+- [ ] Interpreting Machines
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
