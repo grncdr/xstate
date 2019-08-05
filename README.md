@@ -49,7 +49,7 @@ into a Ruby file with no changes.
 
 ### Plan
 
-The following features are implemented:
+The following features are implemented/planned to be implemented:
 
 - [x] Machines
 - [x] States
@@ -59,9 +59,7 @@ The following features are implemented:
 - [x] Hierarchical State Nodes
 - [x] Parallel State Nodes
 - [x] Final States
-
-The following features are partly implemented/untested:
-
+- [ ] Transient States
 - [ ] Context
 - [ ] Guards
 - [ ] History
